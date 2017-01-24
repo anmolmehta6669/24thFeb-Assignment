@@ -24,10 +24,7 @@ object UsingFoldRight {
   }
 
   def hasSubsequence[A](list:List[A],sub:List[A]):Boolean={
-      require(list.size>sub.size)
-      val tempList=list.dropWhile(x=>x!=sub(0))
-      val result=sub.zip(tempList).map(x=>x._1==x._2).contains(false)
-      !result
+      list.containsSlice(sub)
 
 
   }
